@@ -11,20 +11,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:psiemensflutter002/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Verifica que la pantalla principal muestra los botones', (WidgetTester tester) async {
+    // Construye la aplicación y renderiza un frame.
+    await tester.pumpWidget(MiApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verifica que los botones están presentes.
+    expect(find.text('Ir a Inicio'), findsOneWidget);
+    expect(find.text('Ir a Acerca de'), findsOneWidget);
+    expect(find.text('Ir a Contacto'), findsOneWidget);
   });
 }
